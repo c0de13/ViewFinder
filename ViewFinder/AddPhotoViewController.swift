@@ -1,0 +1,61 @@
+//
+//  AddPhotoViewController.swift
+//  ViewFinder
+//
+//  Created by Apple on 6/25/19.
+//  Copyright © 2019 Apple. All rights reserved.
+//
+
+import UIKit
+
+//ass ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //Create an instance of UIImagePickerController, stored in a property on that class
+    var newScreen = UIImagePickerController()
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //Tell that property to give it’s information to this class
+        newScreen.delegate = self
+    }// end of override func viewDidLoad()
+    
+
+    //Create actions for all buttons, and an outlet for the placeholder photo and text field
+    //  @IBOutlet weak var photoTaken: UIImageView! these are the same
+    @IBOutlet weak var photoShown: UIImageView!
+    
+    
+    
+    //Inside of your actions for “Take Photo”, “Find Photo”, etc., write the code necessary to access the camera/library/albums, based on which action you are in.
+    
+    @IBAction func TakePhoto(_ sender: UIButton) {
+        //newScreen.sourceType = .camera
+        //present(newScreen, animated: true, completion: nil)
+        newScreen.sourceType = .camera
+        present(newScreen, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func AccessAlbum(_ sender: UIButton) {
+        newScreen.sourceType = .photoLibrary
+        present(newScreen, animated: true, completion: nil)
+    }
+    
+
+    //Write the imagePickerController function. Again, feel free to reference the lesson from this.
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            //photoTaken
+            photoShown.image = selectedImage
+        }
+        newScreen.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+}//end of the AddPhotoViewController
