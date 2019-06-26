@@ -13,7 +13,7 @@
         <!--ViewFinder-->
         <scene sceneID="5fd-76-mpI">
             <objects>
-                <tableViewController id="SUE-73-07D" sceneMemberID="viewController">
+                <tableViewController id="SUE-73-07D" customClass="PostTableTableViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N5B-uc-S52">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +69,9 @@
                                 <rect key="frame" x="252" y="619" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="0wX-sC-nXX" eventType="touchUpInside" id="xHZ-pq-DgF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I33-0u-wfU">
                                 <rect key="frame" x="150" y="657" width="115" height="30"/>
@@ -91,12 +94,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Aih-Im-BCZ"/>
                     <connections>
+                        <outlet property="captionText" destination="6EB-dq-XEa" id="2Oz-3t-cGx"/>
                         <outlet property="photoShown" destination="UAX-Po-fzA" id="MxE-xd-kNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owo-4j-EJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766.6666666666667" y="124.55357142857142"/>
+            <point key="canvasLocation" x="1678" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H7b-mg-Tkf">

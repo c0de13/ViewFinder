@@ -12,6 +12,8 @@ import UIKit
 
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var photos : [Photos] = []
+    
     //Create an instance of UIImagePickerController, stored in a property on that class
     var newScreen = UIImagePickerController()
     
@@ -24,6 +26,17 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }// end of override func viewDidLoad()
     
 
+    func getPhotos() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            if let coreDataPhotos = try? context.fetch(Photos.fetchRequest()) as? [Photos] {
+               photos = coreDataPhotos
+                tableView.reloadData()
+            }
+        }
+    }
+    
+    
+    
     //Create actions for all buttons, and an outlet for the placeholder photo and text field
     //  @IBOutlet weak var photoTaken: UIImageView! these are the same
     @IBOutlet weak var photoShown: UIImageView!
@@ -33,8 +46,6 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     //Inside of your actions for “Take Photo”, “Find Photo”, etc., write the code necessary to access the camera/library/albums, based on which action you are in.
     
     @IBAction func TakePhoto(_ sender: UIButton) {
-        //newScreen.sourceType = .camera
-        //present(newScreen, animated: true, completion: nil)
         newScreen.sourceType = .camera
         present(newScreen, animated: true, completion: nil)
     }
@@ -54,6 +65,36 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         newScreen.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
+            
+            let photoToSave = Photos(entity: Photos.entity(), insertInto: context)
+            photoToSave.caption = captionText.text
+            
+            if let userImage = photoShown.image {
+                if let userImageData = UIImagePNGRepresentation(userImage){
+                    photoToSave.imageData = userImageData
+                }
+            }
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            navigationController?.popViewController(animated: true)
+            
+        }//end if let context
+    
+    }//end of saveButton func
+    
+    
+    
+    
+    @IBOutlet weak var captionText: UITextField!
+    
+    
+    
+    
+
     
     
     

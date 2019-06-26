@@ -15,6 +15,7 @@
 		1805078B22C25EAE00CA512B /* ViewFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805078A22C25EAE00CA512B /* ViewFinderTests.swift */; };
 		1805079622C25EAE00CA512B /* ViewFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805079522C25EAE00CA512B /* ViewFinderUITests.swift */; };
 		180507A422C2676A00CA512B /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180507A322C2676A00CA512B /* AddPhotoViewController.swift */; };
+		180507A622C29B8400CA512B /* PostTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180507A522C29B8400CA512B /* PostTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1805079522C25EAE00CA512B /* ViewFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFinderUITests.swift; sourceTree = "<group>"; };
 		1805079722C25EAE00CA512B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180507A322C2676A00CA512B /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		180507A522C29B8400CA512B /* PostTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				1805077222C25EAC00CA512B /* AppDelegate.swift */,
 				180507A322C2676A00CA512B /* AddPhotoViewController.swift */,
 				1805077622C25EAC00CA512B /* Main.storyboard */,
+				180507A522C29B8400CA512B /* PostTableTableViewController.swift */,
 				1805077C22C25EAE00CA512B /* Assets.xcassets */,
 				1805077E22C25EAE00CA512B /* LaunchScreen.storyboard */,
 				1805078122C25EAE00CA512B /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				1805077B22C25EAC00CA512B /* ViewFinder.xcdatamodeld in Sources */,
 				180507A422C2676A00CA512B /* AddPhotoViewController.swift in Sources */,
+				180507A622C29B8400CA512B /* PostTableTableViewController.swift in Sources */,
 				1805077322C25EAC00CA512B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
